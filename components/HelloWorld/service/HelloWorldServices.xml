@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.0.xsd">
+
+    <service verb="create" noun="Tutorial" type="entity-auto">
+        <in-parameters>
+            <parameter name="title" required="true"/>
+            <parameter name="description"/>
+        </in-parameters>
+        <actions>
+            <entity-operation operation="create" entity-name="org.moqui.myproject.Tutorial"/>
+        </actions>
+    </service>
+
+    <service verb="update" noun="Tutorial" type="entity-auto">
+        <in-parameters>
+            <parameter name="tutorialId" required="true"/>
+            <parameter name="title"/>
+            <parameter name="description"/>
+        </in-parameters>
+        <actions>
+            <entity-operation operation="update" entity-name="org.moqui.myproject.Tutorial"/>
+        </actions>
+    </service>
+
+    <service verb="delete" noun="Tutorial" type="entity-auto">
+        <in-parameters>
+            <parameter name="tutorialId" required="true"/>
+        </in-parameters>
+        <actions>
+            <entity-operation operation="delete" entity-name="org.moqui.myproject.Tutorial"/>
+        </actions>
+    </service>
+</services>

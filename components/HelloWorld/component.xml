@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="HelloWorld"
+           location="component://HelloWorld"
+           version="1.0.0"
+           description="Demo component with a dashboard screen">
+
+    <!-- Tell Moqui to load the screen file -->
+    <screen-facade location="component://HelloWorld/screen/TutorialScreens.xml"/>
+
+    <!-- (optional) load entities & services -->
+    <entity-facade location="component://HelloWorld/entity/HelloWorldEntity.xml"/>
+    <service-facade location="component://HelloWorld/service/HelloWorldServices.xml"/>
+</component>
+

@@ -1,0 +1,61 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/screen-definition-3.0.xsd">
+
+    <screen name="TutorialList">
+        <section>
+            <actions>
+                <entity-find entity-name="org.moqui.myproject.Tutorial" list="tutorialList"/>
+            </actions>
+            <widgets>
+                <container-panel>
+                    <link url="/myproject/tutorial/create" text="New Tutorial"/>
+                    <table>
+                        <table-column field="tutorialId"/>
+                        <table-column field="title"/>
+                        <table-column field="createdDate" format="date-time"/>
+                        <table-column>
+                            <link url="/myproject/tutorial/edit/${tutorialId}" text="Edit"/>
+                        </table-column>
+                    </table>
+                </container-panel>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="TutorialForm">
+        <parameter name="tutorialId"/>
+        <section>
+            <actions>
+                <if condition="!tutorialId">
+                    <set field="pageTitle" value="Create Tutorial"/>
+                </if>
+                <else>
+                    <set field="pageTitle" value="Edit Tutorial"/>
+                    <entity-find-one entity-name="org.moqui.myproject.Tutorial" value-field="tutorial"/>
+                </else>
+            </actions>
+            <widgets>
+                <form transition="${tutorialId ? 'updateTutorial' : 'createTutorial'}">
+                    <field name="tutorialId" hidden="true"/>
+                    <field name="title" label="Title" required="true"/>
+                    <field name="description" label="Description" widget="textarea"/>
+                    <field name="submit" widget="submit" text="${pageTitle}"/>
+                </form>
+            </widgets>
+        </section>
+    </screen>
+</screens> -->
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/screen-facade-3.xsd">
+
+    <screen name="HelloWorldMain">
+        <widgets>
+            <label text="Hello World – it works!"/>
+        </widgets>
+    </screen>
+</screens>
